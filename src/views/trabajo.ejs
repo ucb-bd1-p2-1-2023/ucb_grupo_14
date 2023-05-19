@@ -1,0 +1,46 @@
+<%- include('partials/_header'); -%>
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/add" method="post">
+                        <a>Nombre:</a>
+                        <div class="form-group">
+                            <input type="text" name="firstname" placeholder="Nombre" class="form-control mb-2" required>
+                        </div>
+                        <a>Apellidos:</a>
+                        <div class="form-group">
+                          <div class="row">
+                            <div class="col">
+                              <a>Paterno:</a>
+                              <input type="text" name="lastnamePather" placeholder="Apellido" class="form-control mb-2" required>
+                            </div>
+                            <div class="col">
+                              <a>Materno:</a>
+                              <input type="text" name="lastnameMother" placeholder="Apellido" class="form-control mb-2" required>
+                            </div>
+                          </div>
+                        </div>
+                        <a>Telefono:</a>
+                        <div class="form-group">
+                            <input type="text" name="phone" placeholder="telefono" class="form-control mb-2" required>
+                        </div>
+                        <a>Email:</a>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email" class="form-control mb-2" required>
+                        </div>
+                        <a>Contraseña:</a>
+                        <div class="form-group">
+                            <input type="text" name="ADRRESS" placeholder="Contraseña" class="form-control mb-2" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary ">
+                            Enviar dormulario
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+<%- include('partials/_footer'); -%>

@@ -1,0 +1,32 @@
+<%- include('partials/_header'); -%>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/add" method="post">
+                            <a>Nombre:</a>
+                            <div class="form-group">
+                                <input type="text" name="firstname" placeholder="Nombre" class="form-control mb-2" required>
+                            </div>
+                            <a>Apellido:</a>
+                            <div class="form-group">
+                                <input type="text" name="lastname" placeholder="Apellido" class="form-control mb-2" required>
+                            </div>
+                            <a>Email:</a>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Email" class="form-control mb-2" required>
+                            </div>
+                            <a>Contraseña:</a>
+                            <div class="form-group">
+                                <input type="text" name="ADRRESS" placeholder="Contraseña" class="form-control mb-2" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                Crear Usuario
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+    <%- include('partials/_footer'); -%>
