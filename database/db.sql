@@ -6,11 +6,11 @@ use db1;
 
 -- Creating a table
 CREATE TABLE user (
-    id int PRIMARY KEY AUTO_INCREMENT,
-    firstname varchar(20),
+    id INT PRIMARY KEY AUTO_INCREMENT
+    firstname varchar(20), 
     lastname varchar(20),
     email varchar(30),
-    ADRRESS varchar(20)
+    ADRRESS varchar(20),
 );
 
 CREATE TABLE worker (
@@ -20,7 +20,7 @@ CREATE TABLE worker (
     lastnameMother VARCHAR(20),
     phone INT(10),
     email VARCHAR(30),
-    address VARCHAR(20)
+    ADRRESS VARCHAR(20)
 );
 -- tp show all tables
 SHOW TABLES;

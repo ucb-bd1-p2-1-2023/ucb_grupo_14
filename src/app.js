@@ -17,13 +17,16 @@ app.set('views', path.join(__dirname, 'views'));
 // Middleware para analizar el cuerpo de las solicitudes JSON
 app.use(bodyParser.json());
 
-const client = mysql.createPool({
-  host:'localhost',
-  port: '3306',
-  user: 'root',
-  password: 'root',
-  database: 'db1'
-});
+// Middleware de conexión a la base de datos
+app.use(
+  myConnection(mysql, {
+    host: 'localhost',
+    port: '3306',
+    user: 'root',
+    password: 'root',
+    database: 'db1'
+  }, 'single')
+);
 
 
 app.use(express.urlencoded({ extended: false }));

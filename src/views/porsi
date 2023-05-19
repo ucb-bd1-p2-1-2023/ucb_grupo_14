@@ -1,0 +1,26 @@
+            <div class="col-md-7">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Email</th>
+                            <th>Adrress</th>
+                            <th>id</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if (data) { %>
+                            <% for (var i = 0; i < data.length; i++) { %>
+                                <tr>
+                                    <td><%= data[i].firstname %></td>
+                                    <td><%= data[i].lastname %></td>
+                                    <td><%= data[i].email %></td>
+                                    <td><%= data[i].ADRRESS %></td>
+                                    <td><%= i + 1 %></td>
+                                </tr>
+                            <% } %>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>

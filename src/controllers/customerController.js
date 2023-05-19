@@ -50,4 +50,43 @@ controller.save = (req, res) => {
         });
     });
 };
+
+controller.job = (req, res) => {
+    const data = req.body;
+
+    req.getConnection((err, conn) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send('Error al conectar con la base de datos');
+            return;
+        }
+
+        // Verificar si el usuario ya existe
+        conn.query('SELECT * FROM worker WHERE email = ?', [data.email], (err, rows) => {
+            if (err) {
+                console.log(err);
+                res.status(500).send('Error al verificar si el usuario existe');
+                return;
+            }
+
+            if (rows.length > 0) {
+                // El usuario ya existe, retornar un mensaje indicando esto
+                res.status(400).send('El usuario ya existe');
+                return;
+            }
+
+            // El usuario no existe, realizar la inserción
+            conn.query('INSERT INTO worker SET ?', data, (err, result) => {
+                if (err) {
+                    console.log(err);
+                    res.status(500).send('Error al insertar usuario en la base de datos');
+                    return;
+                }
+
+                console.log(result);
+                res.send('Usuario creado exitosamente');
+            });
+        });
+    });
+};
 module.exports = controller;
