@@ -89,4 +89,35 @@ controller.job = (req, res) => {
         });
     });
 };
+
+controller.start = (req, res) => {
+    const { email, ADRRESS } = req.body;
+    req.getConnection((err, conn) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send('Error al conectar con la base de datos');
+            return;
+        }
+
+        // Check if the user exists in the database
+        conn.query('SELECT * FROM user WHERE email = ? AND ADRRESS = ?', [email, ADRRESS], (err, rows) => {
+            if (err) {
+                console.log(err);
+                res.status(500).send('Error al verificar el inicio de sesión');
+                return;
+            }
+
+            if (rows.length === 0) {
+                // User not found or invalid credentials
+                res.status(401).send('Credenciales inválidas');
+                return;
+            }
+
+            // User found, login successful
+            res.send('Inicio de sesión exitoso');
+        });
+    });
+};
+
+
 module.exports = controller;
