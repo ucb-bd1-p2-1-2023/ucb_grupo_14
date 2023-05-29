@@ -73,7 +73,9 @@ app.get('/trabajo', (req, res) => {
 app.get('/secion', (req, res) => {
   res.render('iniciarSecion');
 });
-
+app.get('/secionWork',(req, res) => {
+  res.render('iniciarSecion');
+});
 // Puerto de escucha
 app.listen(app.get('port'), () => {
   console.log(`Server running on port ${app.get('port')}`);
