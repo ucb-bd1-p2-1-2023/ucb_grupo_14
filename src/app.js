@@ -73,8 +73,8 @@ app.get('/trabajo', (req, res) => {
 app.get('/secion', (req, res) => {
   res.render('iniciarSecion');
 });
-app.get('/secionWork',(req, res) => {
-  res.render('iniciarSecion');
+app.get('/secionTrabajo',(req, res) => {
+  res.render('iniciarTrabajador');
 });
 // Puerto de escucha
 app.listen(app.get('port'), () => {
